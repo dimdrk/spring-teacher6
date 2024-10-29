@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -36,6 +37,7 @@ public class TeacherController {
         return "teacher-form";
     }
 
+    @PostMapping("/teachers/insert")
     public String saveTeacher(@Valid @ModelAttribute("teacherInsertDTO") TeacherInsertDTO teacherInsertDTO,
                               BindingResult bindingResult,
                               Model model) {
@@ -57,7 +59,7 @@ public class TeacherController {
         // return "redirect:/school/teachers";
 
         TeacherReadOnlyDTO teacherReadOnlyDTO = mapper.mapToTeacherReadOnlyDTO(savedTeacher);
-        model.addAttribute("teacher", savedTeacher);
+        model.addAttribute("teacher", teacherReadOnlyDTO);
         return "success";
     }
 }
