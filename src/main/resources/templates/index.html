@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div th:replace="fragments/header :: headerFragment"></div>
+<div th:replace="~{fragments/header :: headerFragment}"></div>
 
 <!-- Main Content -->
 <main class="container text-center my-5 main-content">
@@ -19,7 +19,7 @@
     <a th:href="@{/school/teachers/insert}" class="custom-button-green">Συνέχεια</a>
 </main>
 
-<div th:replace="fragments/footer :: footerFragment"></div>
+<div th:replace="~{fragments/footer :: footerFragment}"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
